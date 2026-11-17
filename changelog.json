@@ -5,6 +5,22 @@
 		{
 			"changes": [
 				{
+					"detail": "createBrowserTracker (./browser) now keeps its queue in the tab's session storage when the page hides and sends it from the next page in the same tab, so a full page load or reload no longer drops the events queued since the last flush. The tab's session id is kept there too, so a reload stays one session. A new storage option on BrowserTrackerOptions takes any Web Storage-shaped store (TrackerStorage), or null to keep everything in memory; storage that is full or blocked falls back to memory. Left-over events are discarded if consent was withdrawn in between.",
+					"kind": "changed",
+					"summary": "Browser events queued before a full page load are sent by the next page instead of being lost",
+					"symbols": [
+						"createBrowserTracker",
+						"BrowserTrackerOptions",
+						"TrackerStorage"
+					]
+				}
+			],
+			"date": "2026-11-17",
+			"version": "0.1.0-beta.2"
+		},
+		{
+			"changes": [
+				{
 					"detail": "The first release: insight_events, insight_actors and insight_daily_actives as Drizzle tables, and createInsights over them: markActive (exact daily activity, at most one write per person per day), track (server or browser events, names lowercase-dotted, browser clocks clamped), identify (label and signup time), activeSeries (daily, rolling 7- and 30-day and new people), retention (weekly cohorts), funnel (ordered steps with median time between), featureUsage (people, events and the period before), people, person (with active days and a timeline), purgeEventsBefore and forget; plus createBrowserTracker from ./browser, a consent-gated batching tracker.",
 					"kind": "added",
 					"summary": "Insights: active people, retention cohorts, activation funnels, feature usage and a per-person timeline, from server and consented browser events",
