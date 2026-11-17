@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/insights",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.2",
   "description": "Product insights for AbsoluteJS applications: record what people do (on the server, and in the browser with consent) and read active people, weekly retention cohorts, activation funnels, feature usage and a per-person timeline. Drizzle-native, Postgres.",
   "repository": {
     "type": "git",
